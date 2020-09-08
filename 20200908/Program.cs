@@ -10,6 +10,9 @@ namespace _20200908
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }
