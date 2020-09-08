@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace _20200908
@@ -15,6 +16,11 @@ namespace _20200908
             int gepValasz = vel.Next(0, 3);
             Console.WriteLine("Gép Választása: {0}",lehetoseg[gepValasz]);
 
+            int jatekosValasz;
+            Console.WriteLine("Kő (0), Papír (1), Olló (2)");
+            Console.Write("Válasz: ");
+            jatekosValasz = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Játékos választása: {0}",lehetoseg[jatekosValasz]);
             
             Console.ReadKey();
         }
