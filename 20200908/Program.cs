@@ -10,8 +10,12 @@ namespace _20200908
     {
         static void Main(string[] args)
         {
+            Random vel = new Random();
+            string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
+            int gepValasz = vel.Next(0, 3);
+            Console.WriteLine("Gép Választása: {0}",lehetoseg[gepValasz]);
 
-            Console.WriteLine();
+            
             Console.ReadKey();
         }
     }
