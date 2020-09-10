@@ -9,6 +9,11 @@ namespace _20200908
     class Program
     {
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
+
+        static int botnyer = 0;
+        static int jatekosnyer = 0;
+        static int menet = 0;
+
         static void eredmeny_kiiras(int gep, int ember)
         {
             Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep], lehetoseg[ember]);
@@ -33,15 +38,19 @@ namespace _20200908
                 ||
                 (ember == 2 && gep == 0)
                 )
+                
             {
+                botnyer++;
                 return 1;
             }
             else if (gep == ember) //Döntetlen
             {
+                
                 return 0;
             }
             else //Játékos nyer
             {
+                jatekosnyer++;
                 return 2;
             }
         }
@@ -73,7 +82,10 @@ namespace _20200908
              return false;
 	        }
         }
-
+        private static void Statisztikakiiras()
+        {
+            Console.WriteLine("\t Menetek száma: {0}\n\t Játékos nyert: {1}\n\t Gép nyert: {2}",menet,jatekosnyer,botnyer);
+        }
 
         static void Main(string[] args)
         {
@@ -81,13 +93,17 @@ namespace _20200908
            
             while (tovabb)
 	    {
+            menet++;
 	        int jatekosvalaszt = jatekos_valaszt();
             int gep_valaszt = gepvalasztas();
             eredmeny_kiiras(gep_valaszt, jatekosvalaszt); 
             tovabb = AkarJatszani();
+
 	    }
+            Statisztikakiiras();
             Console.ReadKey();
         }
+       
        
     }
 }

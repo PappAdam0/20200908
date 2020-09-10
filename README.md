@@ -12,12 +12,15 @@ Nyerés:
   - Ember nyer()
   - Visszaadott érték 0/1/2
   	- 0 Döntetlen
-       - 1 Gép nyer
+    - 1 Gép nyer
   	- 2 Ember nyer
     - 
- [] Kiírjuk az eredményt
+ [x] Kiírjuk az eredményt
 
--Kiírás külön metódusba
+    -Kiírás külön metódusba
 
 ## Játékmenet 2.0
-[] Addig játszunk míg ki nem lépünk a játékból.
+[x] Addig játszunk míg ki nem lépünk a játékból.
+
+[x] Statisztika megvalósítása
+[x]    Gép, Játékos, mennyi menet
