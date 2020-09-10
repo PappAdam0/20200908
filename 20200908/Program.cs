@@ -56,15 +56,38 @@ namespace _20200908
             Random vel = new Random();
             return vel.Next(0, 3);
         }
+        private static bool AkarJatszani()
+        {
+            Console.WriteLine("--------------------");
+            
+
+            Console.Write("Tovább? [i/n]: ");
+            string valasz= Console.ReadLine().ToLower();
+            Console.WriteLine("\n--------------------");
+            if (valasz == "i")
+	        {
+                return true;
+	        }
+            else
+	        {
+             return false;
+	        }
+        }
+
+
         static void Main(string[] args)
         {
-            //gépválasztása        
-            //Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
-            //játékosválasztása
-            int jatekosvalaszt = jatekos_valaszt();
+            bool tovabb = true;
+           
+            while (tovabb)
+	    {
+	        int jatekosvalaszt = jatekos_valaszt();
             int gep_valaszt = gepvalasztas();
-            eredmeny_kiiras(gep_valaszt, jatekosvalaszt);
+            eredmeny_kiiras(gep_valaszt, jatekosvalaszt); 
+            tovabb = AkarJatszani();
+	    }
             Console.ReadKey();
         }
+       
     }
 }
