@@ -12,7 +12,7 @@ namespace _20200908
     {
         
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
-
+        static int[] adat = new int[3];
         static int botnyer = 0;
         static int jatekosnyer = 0;
         static int menet = 0;
@@ -92,7 +92,7 @@ namespace _20200908
         private static void statisztikafajlbol()
         {
             StreamReader stat = new StreamReader("statisztika.txt");
-            int[] adat = new int[3];
+            
 
             while (!stat.EndOfStream)
             {
@@ -114,10 +114,20 @@ namespace _20200908
             
             Console.WriteLine("------------- Statisztika vége -------------");
         }
+        private static void statisztikafajlba()
+        {
+            StreamWriter iro = new StreamWriter("statisztika2.txt");
+          for (int i = 0; i < adat.Length; i++)
+			{
+                 iro.Write(adat[i]+";");
+			}
+          iro.Close();
+        }
 
         static void Main(string[] args)
         {
             statisztikafajlbol();
+            statisztikafajlba();
 
             bool tovabb = true;
            
