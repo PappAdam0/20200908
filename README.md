@@ -14,7 +14,7 @@ Nyerés:
   	- 0 Döntetlen
     - 1 Gép nyer
   	- 2 Ember nyer
-    - 
+    
  [x] Kiírjuk az eredményt
 
     -Kiírás külön metódusba
@@ -23,4 +23,12 @@ Nyerés:
 [x] Addig játszunk míg ki nem lépünk a játékból.
 
 [x] Statisztika megvalósítása
-[x]    Gép, Játékos, mennyi menet
+
+    [x]    Gép, Játékos,  mennyi menet
+
+[] Eredmények fájlba írása ls megjelenítése.
+
+    - 1. érték -> menet
+    - 2. érték -> játékos
+    - 3. érték -> gép
+    - értékek ';'-vel elválasztva.

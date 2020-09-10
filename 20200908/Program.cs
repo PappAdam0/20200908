@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 
 namespace _20200908
 {
     class Program
     {
+        
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
 
         static int botnyer = 0;
@@ -86,9 +89,36 @@ namespace _20200908
         {
             Console.WriteLine("\t Menetek száma: {0}\n\t Játékos nyert: {1}\n\t Gép nyert: {2}",menet,jatekosnyer,botnyer);
         }
+        private static void statisztikafajlbol()
+        {
+            StreamReader stat = new StreamReader("statisztika.txt");
+            int[] adat = new int[3];
+
+            while (!stat.EndOfStream)
+            {
+                
+                string[] sor = stat.ReadLine().Split(';');
+               /* adat[0] = int.Parse(sor[0]);
+                adat[1] = int.Parse(sor[1]);
+                adat[2] = int.Parse(sor[2]);*/
+                for (int i = 0; i < adat.Length; i++)
+			{
+                    adat[i] = int.Parse(sor[i]);
+			}
+             
+                Console.WriteLine("{0} {1} {2}", adat[0],adat[1],adat[2]);
+            }
+            stat.Close();
+                
+            
+            
+            Console.WriteLine("------------- Statisztika vége -------------");
+        }
 
         static void Main(string[] args)
         {
+            statisztikafajlbol();
+
             bool tovabb = true;
            
             while (tovabb)
@@ -103,7 +133,7 @@ namespace _20200908
             Statisztikakiiras();
             Console.ReadKey();
         }
-       
-       
+
+        
     }
 }
