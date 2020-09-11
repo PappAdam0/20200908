@@ -116,18 +116,18 @@ namespace _20200908
         }
         private static void statisztikafajlba()
         {
-            StreamWriter iro = new StreamWriter("statisztika2.txt");
-          for (int i = 0; i < adat.Length; i++)
-			{
-                 iro.Write(adat[i]+";");
-			}
-          iro.Close();
+           
+            string adat = menet.ToString()+";"+jatekosnyer.ToString()+";"+botnyer.ToString();
+            StreamWriter iro = new StreamWriter("statisztika.txt",true);
+
+            iro.WriteLine(adat);
+            iro.Close();
         }
 
         static void Main(string[] args)
         {
             statisztikafajlbol();
-            statisztikafajlba();
+            
 
             bool tovabb = true;
            
@@ -141,6 +141,7 @@ namespace _20200908
 
 	    }
             Statisztikakiiras();
+            statisztikafajlba();
             Console.ReadKey();
         }
 
